@@ -1,7 +1,5 @@
-function [v, M] = PPTDist(X,P)
+function [v, M] = PPTDist(X, p)
 % PPTDIST
-%   
-
-
-end
-
+%
+%   author: Alessandro Cosentino <cosenal@gmail.com>
+%   Copyright (c) Alessandro Cosentino, 2015
