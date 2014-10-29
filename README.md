@@ -17,5 +17,5 @@ http://cvxr.com/news/2014/03/cvx-on-octave/
 
 # Thanks
 
-* [Nathaniel Johnston](http://www.njohnston.ca/): <nathaniel@njohnston.ca>
-* [Vincent Russo](https://github.com/vprusso): <vincentrusso1@gmail.com>
+* [Nathaniel Johnston](http://www.njohnston.ca/)
+* [Vincent Russo](https://github.com/vprusso)
