@@ -2,7 +2,7 @@
 
 A MATLAB toolbox
 
-# Requirements
+## Requirements
 
 * MATLAB
 * [CVX](http://cvxr.com/cvx/)
@@ -10,12 +10,12 @@ A MATLAB toolbox
 
 http://cvxr.com/news/2014/03/cvx-on-octave/
 
-# Supported
+## Supported
 
 * MATLAB R2014b
 * CVX Version 2.1
 
-# Thanks
+## Thanks
 
 * [Nathaniel Johnston](http://www.njohnston.ca/)
 * [Vincent Russo](https://github.com/vprusso)
