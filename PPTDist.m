@@ -1,10 +1,17 @@
-function [v, M] = PPTDist(X, p, SYS, DIM)
+function [v, M] = PPTDist(X, p, DIM)
 % PPTDIST
 %
 %   author: Alessandro Cosentino <cosenal@gmail.com>
 %   Copyright (c) Alessandro Cosentino, 2015
+
     [S,N,d] = check_ensemble(X, p);
 
+    if (nargin <= 2)
+        DIM = round(sqrt(d)); 
+    elseif (~isscalar(DIM))
+        error('DIM input needs to be a scalar');
+    end
+    
     cvx_begin sdp quiet
         cvx_precision default
         
@@ -12,17 +19,19 @@ function [v, M] = PPTDist(X, p, SYS, DIM)
 
         opt = 0;
         P_sum = zeros(d);
-        
+
         for k=1:N
             opt = opt + ip(P(:,:,k), S{k});
             P_sum = P_sum + P(:,:,k);
-
         end 
-                
+
         maximize(opt);
         subject to
             P_sum == eye(d);
-            P >= 0;
+            for k=1:N
+                PartialTranspose(P(:,:,k), 1, DIM) >= 0;
+                P(:,:,k) >= 0;
+            end        
     cvx_end
     
     v = cvx_optval;

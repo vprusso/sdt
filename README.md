@@ -1,5 +1,3 @@
-# State Distinguishability Toolbox (SDT)
-
 A MATLAB toolbox
 
 ## Requirements
