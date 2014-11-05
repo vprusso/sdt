@@ -15,7 +15,7 @@ function [v, M] = PPTDist(X, p, DIM)
     cvx_begin sdp quiet
         cvx_precision default
         
-        variable P(d,d,N) hermitian;
+        variable P(d,d,N) semidefinite hermitian;
 
         opt = 0;
         P_sum = zeros(d);
@@ -30,7 +30,7 @@ function [v, M] = PPTDist(X, p, DIM)
             P_sum == eye(d);
             for k=1:N
                 PartialTranspose(P(:,:,k), 1, DIM) >= 0;
-                P(:,:,k) >= 0;
+                %P(:,:,k) >= 0;
             end        
     cvx_end
     
